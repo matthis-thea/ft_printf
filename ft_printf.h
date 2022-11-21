@@ -6,7 +6,7 @@
 /*   By: mthea <mthea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 11:52:27 by mthea             #+#    #+#             */
-/*   Updated: 2022/11/21 17:26:35 by mthea            ###   ########.fr       */
+/*   Updated: 2022/11/21 18:00:09 by mthea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,26 @@
 # include <unistd.h>
 # include <printf.h>
 # include <stdlib.h> 
+# include <stdarg.h>
+// Principals Functions
+int ft_printf(const char *str, ...);
 // External functions
-int ft_strlen(char *str);
+int		ft_strlen(char *str);
 void	ft_tri(char *tab);
-// Fucntions for %c
-void	ft_aff_c(char c);
+int		ft_compte_nb(int n);
+int		ft_compte_nb_u(unsigned int n);
+// Functions for %c
+int		ft_aff_c(char c);
 // Functions for %s
-void	ft_aff_s(char *s);
+int		ft_aff_s(char *s);
 // Functions for %p
-void	ft_putnbr_base(void *nb, char *base);
+int		ft_putnbr_base(void *nb, char *base);
 // Functions for %d and %i
-void	ft_aff_nb(int n);
+int		ft_aff_nb(int n);
 // Functions for %u
-void	ft_aff_nb_u(unsigned int n);
+int		ft_aff_nb_u(unsigned int n);
 // Functions for %x and %X
-void	ft_aff_nb_x(int nbr, char *base);
+int		ft_aff_nb_x(int nbr, char *base);
 // Functions for %%
-void	ft_aff_p(char c);
+int		ft_aff_p(char c);
 #endif

@@ -1,36 +1,66 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_chaines_caracteres.c                            :+:      :+:    :+:   */
+/*   ft_external_functions.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mthea <mthea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 11:49:28 by mthea             #+#    #+#             */
-/*   Updated: 2022/11/21 17:55:45 by mthea            ###   ########.fr       */
+/*   Created: 2022/11/21 17:46:35 by mthea             #+#    #+#             */
+/*   Updated: 2022/11/21 17:48:39 by mthea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "unistd.h"
-
-// Functions for %c
-int	ft_aff_c(char c)
-{
-	write(1, &c, 1);
-	return (1);
-}
-
-// fonctions for %s
-int	ft_aff_s(char *s)
+// External Functions
+int ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	if (!s)
+	if (str == NULL)
 		return (0);
-	while (s[i])
+	while (str[i])
+		i++;
+	return (i);
+}
+
+void	ft_tri(char *tab)
+{
+	int	j;
+
+	j = ft_strlen(tab) - 1;
+	while (j >= 0)
 	{
-		ft_aff_c(s[i]);
+		ft_aff_c(tab[j]);
+		j--;
+	}
+}
+
+int		ft_compte_nb(int n)
+{
+	int	i;
+
+	i = 1;
+	if (n < 0)
+		n = -n;
+	while (n >= 10)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
+}
+
+int		ft_compte_nb_u(unsigned int n)
+{
+	int	i;
+
+	i = 1;
+	if (n < 0)
+		n = -n;
+	while (n >= 10)
+	{
+		n /= 10;
 		i++;
 	}
 	return (i);

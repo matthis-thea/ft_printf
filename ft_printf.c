@@ -6,16 +6,14 @@
 /*   By: mthea <mthea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 13:02:06 by mthea             #+#    #+#             */
-/*   Updated: 2022/11/21 11:33:50 by mthea            ###   ########.fr       */
+/*   Updated: 2022/11/21 18:00:26 by mthea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_chaines_caracteres.h"
+#include "ft_printf.h"
 #include <stdarg.h>
 
-int ft_printff(const char *str, ...);
- 
-int ft_printff(const char *str, ...)
+int ft_printf(const char *str, ...);
 {
     int entier;
 

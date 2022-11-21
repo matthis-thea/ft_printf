@@ -5,7 +5,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = test.c ft_void_pourcentages.c ft_chaines_caracteres.c ft_nombres_base_dix.c ft_nombres_base_seize.c
+SRC = test.c ft_void_pourcentages.c ft_chaines_caracteres.c ft_nombres_base_dix.c ft_nombres_base_seize.c ft_external_functions.c
 
 INC = ft_printf.h
 
