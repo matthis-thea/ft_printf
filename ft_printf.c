@@ -6,13 +6,12 @@
 /*   By: mthea <mthea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 13:02:06 by mthea             #+#    #+#             */
-/*   Updated: 2022/11/21 18:00:26 by mthea            ###   ########.fr       */
+/*   Updated: 2022/11/22 14:25:49 by mthea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdarg.h>
-
 int ft_printf(const char *str, ...);
 {
     int entier;
@@ -40,6 +39,6 @@ int ft_printf(const char *str, ...);
 
 int main (void)
 {
-   ft_printff("hello %d %s %d", 10, 20);
+   ft_printf("hello %d %s %d", 10, 20);
    return (1);
 }
