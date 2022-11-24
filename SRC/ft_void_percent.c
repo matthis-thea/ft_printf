@@ -6,41 +6,41 @@
 /*   By: mthea <mthea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 13:29:37 by mthea             #+#    #+#             */
-/*   Updated: 2022/11/23 16:49:14 by mthea            ###   ########.fr       */
+/*   Updated: 2022/11/24 15:42:37 by mthea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../INCLUDES/ft_printf.h"
 
-int	ft_putnbr_base(void *nb, char *base)
+int	ft_printf_void(unsigned long long nb, char *base, int *verification)
 {
-	unsigned long int	resultat;
-	unsigned long int	nbr;
+	unsigned int		resultat;
 	char				*str;
 	int					i;
+	int					return_value;
 
 	i = 0;
 	str = (char *) malloc(sizeof(char) * 13);
-	if (str == 0)
-		return (0);
-	nbr = (unsigned long int) nb;
-	while (nbr > 0)
+	if (!str)
+		return (-1);
+	return_value = ft_count_return_nb_u(nb) + 2;
+	while (nb > 0)
 	{
 		resultat = 0;
-		resultat = nbr % 16;
-		nbr = nbr / 16;
+		resultat = nb % 16;
+		nb = nb / 16;
 		str[i] = base[resultat];
 		i++;
 	}
-	ft_aff_s("0x");
-	str[12] = 0;
-	ft_tri(str);
-	return (ft_compte_nb_u(nbr) + 2);
+	ft_printf_s("0x", verification);
+	str[++i] = 0;
+	ft_rev_char_tab(str, i, verification);
+	free(str);
+	return (return_value);
 }
 
-int	ft_aff_p(char c)
+int	ft_printf_pourcentage(char c, int *verification)
 {
-	if (ft_aff_c(c) == -1)
-		return (-1);
+	ft_printf_c(c, verification);
 	return (1);
 }

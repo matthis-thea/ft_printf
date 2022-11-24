@@ -6,7 +6,7 @@
 /*   By: mthea <mthea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:46:35 by mthea             #+#    #+#             */
-/*   Updated: 2022/11/23 16:35:56 by mthea            ###   ########.fr       */
+/*   Updated: 2022/11/24 15:41:19 by mthea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,33 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-void	ft_tri(char *tab)
+void	ft_rev_char_tab(char *tab, int size, int *verification)
 {
-	int	j;
+	int		i;
+	int		stockage_d;
+	int		taille;
 
-	j = ft_strlen(tab) - 1;
-	while (j >= 0)
+	i = 0;
+	stockage_d = 0;
+	taille = size - 1;
+	while (i < taille)
 	{
-		ft_aff_c(tab[j]);
-		j--;
+		stockage_d = tab[taille];
+		tab[taille] = tab[i];
+		tab[i] = stockage_d;
+		i++;
+		taille--;
 	}
+	i = 0;
+	while (tab[i])
+	{
+		ft_printf_c(tab[i], verification);
+		i++;
+	}
+	ft_printf_c(tab[i], verification);
 }
 
-int	ft_compte_nb(int n)
+int	ft_count_return_nb(int n)
 {
 	int	i;
 
@@ -51,7 +65,7 @@ int	ft_compte_nb(int n)
 	return (i);
 }
 
-int	ft_compte_nb_u(unsigned int n)
+int	ft_count_return_nb_u(unsigned int n)
 {
 	int	i;
 
