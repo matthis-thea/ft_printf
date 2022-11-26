@@ -15,7 +15,6 @@
 # include <unistd.h>
 # include <stdlib.h> 
 # include <stdarg.h>
-# include <stdio.h>
 
 int	ft_count_return_nb(int n);
 int	ft_count_return_nb_u(unsigned int n);
