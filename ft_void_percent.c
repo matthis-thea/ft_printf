@@ -22,7 +22,9 @@ int	ft_printf_void(unsigned long long nb, int *verification)
 	base = "0123456789abcdef";
 	i = 2;
 	str = NULL;
-	str = (char *) malloc(sizeof(char) * 15);
+	if (nb == 0)
+		return (-1);
+	str = (char *) malloc(sizeof(char) * ft_count_return_nb_long(nb + 1));
 	if (!str)
 		return (-1);
 	str[0] = '0';

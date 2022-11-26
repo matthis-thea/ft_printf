@@ -16,6 +16,7 @@ int	ft_print_value(va_list args, char str, int *verification)
 {
 	int	value;
 
+	value = 0;
 	if (str == 'c')
 		value = ft_printf_c(va_arg(args, int), verification);
 	else if (str == 's')
@@ -33,9 +34,7 @@ int	ft_print_value(va_list args, char str, int *verification)
 	else if (str == '%')
 		value = ft_printf_c('%', verification);
 	else
-	{
 		*verification = -1;
-	}
 	if (value < 0)
 		*verification = -1;
 	return (value);
@@ -62,9 +61,18 @@ int	ft_printf(const char *str, ...)
 		}
 		else
 			value += ft_printf_c(str[i], &verification);
+		i++;
 	}
 	va_end(parametres);
 	if (verification == -1)
 		return (-1);
 	return (value);
+}
+
+int main(void)
+{
+	// char a = 0;
+	// void *ptr = &a;
+	printf("%d\n",ft_printf(" %p %p ", 0, 0));
+	// printf("%d\n",printf(" %p %p ", 1, ));
 }

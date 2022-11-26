@@ -20,10 +20,10 @@ int	ft_printf_nb(int n, int *verification)
 
 	b = 0;
 	value_return = ft_count_return_nb(n);
-	if (n == -2147483648)
+	if (n == -2147483647 - 1)
 	{
 		ft_printf_s("-2147483648", verification);
-		return (value_return + 1);
+		return (11);
 	}
 	else if (n < 0)
 	{

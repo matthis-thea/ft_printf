@@ -15,7 +15,7 @@
 # include <unistd.h>
 # include <stdlib.h> 
 # include <stdarg.h>
-
+# include <stdio.h>
 void	ft_rev_char_tab_x(char *tab, int size, int *verification);
 void	ft_rev_char_tab(char *tab, int size, int *verification);
 int		ft_count_return_nb(int n);
