@@ -14,31 +14,28 @@
 
 int	ft_printf_void(unsigned long long nb, int *verification)
 {
-	unsigned int		resultat;
+	int					resultat;
 	char				*str;
 	int					i;
 	char				*base;
 
 	base = "0123456789abcdef";
-	i = 2;
+	i = ft_count_return_nb_long(nb);
+	resultat = 0;
 	str = NULL;
-	if (nb == 0)
-		return (-1);
-	str = (char *) malloc(sizeof(char) * ft_count_return_nb_long(nb + 1));
+	str = (char *) malloc(sizeof(char) * (i + 1));
 	if (!str)
-		return (-1);
+		return (verification_null(verification));
+	str[i] = 0;
 	str[0] = '0';
 	str[1] = 'x';
-	while (nb > 0)
+	while (i > 2)
 	{
-		resultat = 0;
 		resultat = nb % 16;
 		nb = nb / 16;
-		str[i] = base[resultat];
-		i++;
+		str[--i] = base[resultat];
 	}
-	str[i] = 0;
-	ft_rev_char_tab(str, i, verification);
+	i = ft_printf_s(str, verification);
 	free(str);
 	return (i);
 }

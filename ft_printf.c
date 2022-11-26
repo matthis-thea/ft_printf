@@ -12,6 +12,13 @@
 
 #include "ft_printf.h"
 
+int	verification_end(int *verification, int value)
+{
+	if (*verification == -1)
+		return (-1);
+	return (value);
+}
+
 int	ft_print_value(va_list args, char str, int *verification)
 {
 	int	value;
@@ -33,10 +40,6 @@ int	ft_print_value(va_list args, char str, int *verification)
 		value = ft_printf_nb_big_x(va_arg(args, unsigned int), verification);
 	else if (str == '%')
 		value = ft_printf_c('%', verification);
-	else
-		*verification = -1;
-	if (value < 0)
-		*verification = -1;
 	return (value);
 }
 
@@ -49,6 +52,7 @@ int	ft_printf(const char *str, ...)
 
 	i = 0;
 	value = 0;
+	verification = 0;
 	va_start(parametres, str);
 	if (!str)
 		return (0);
@@ -64,15 +68,5 @@ int	ft_printf(const char *str, ...)
 		i++;
 	}
 	va_end(parametres);
-	if (verification == -1)
-		return (-1);
-	return (value);
-}
-
-int main(void)
-{
-	// char a = 0;
-	// void *ptr = &a;
-	printf("%d\n",ft_printf(" %p %p ", 0, 0));
-	// printf("%d\n",printf(" %p %p ", 1, ));
+	return (verification_end(&verification, value));
 }

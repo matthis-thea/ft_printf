@@ -12,56 +12,6 @@
 
 #include "ft_printf.h"
 
-void	ft_rev_char_tab_x(char *tab, int size, int *verification)
-{
-	int		i;
-	char	stockage;
-	int		taille;
-
-	taille = size - 1;
-	stockage = 0;
-	i = 0;
-	while (i < taille)
-	{
-		stockage = tab[i];
-		tab[i] = tab[taille];
-		tab[taille] = stockage;
-		i++;
-		taille--;
-	}
-	i = 0;
-	while (i < size)
-	{
-		ft_printf_c(tab[i], verification);
-		i++;
-	}
-}
-
-void	ft_rev_char_tab(char *tab, int size, int *verification)
-{
-	int		i;
-	char	stockage;
-	int		taille;
-
-	taille = size - 1;
-	stockage = 0;
-	i = 2;
-	while (i < taille)
-	{
-		stockage = tab[i];
-		tab[i] = tab[taille];
-		tab[taille] = stockage;
-		i++;
-		taille--;
-	}
-	i = 0;
-	while (i < size)
-	{
-		ft_printf_c(tab[i], verification);
-		i++;
-	}
-}
-
 int	ft_count_return_nb(int n)
 {
 	int	i;
@@ -94,11 +44,34 @@ int	ft_count_return_nb_long(unsigned long long n)
 {
 	int	i;
 
-	i = 1;
-	while (n >= 10)
-	{
-		n /= 10;
+	i = 0;
+	if (n == 0)
 		i++;
+	while (n > 0)
+	{
+		i++;
+		n /= 16;
+	}
+	return (i + 2);
+}
+
+int	ft_count_return_nb_x(unsigned int n)
+{
+	int	i;
+
+	i = 0;
+	if (n == 0)
+		i++;
+	while (n > 0)
+	{
+		i++;
+		n /= 16;
 	}
 	return (i);
+}
+
+int	verification_null(int *verification)
+{
+	*verification = -1;
+	return (0);
 }

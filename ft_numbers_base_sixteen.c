@@ -14,54 +14,52 @@
 
 int	ft_printf_nb_x(unsigned int nbr, int *verification)
 {
-	unsigned int		resultat;
+	int					resultat;
 	char				*str;
 	int					i;
 	char				*base;
 
 	base = "0123456789abcdef";
-	i = 0;
+	i = ft_count_return_nb_x(nbr);
+	resultat = 0;
 	str = NULL;
-	str = (char *) malloc(sizeof(char) * 15);
+	str = (char *) malloc(sizeof(char) * (i + 1));
 	if (!str)
-		return (-1);
-	while (nbr > 0)
+		return (verification_null(verification));
+	str[i] = 0;
+	while (i > 0)
 	{
-		resultat = 0;
 		resultat = nbr % 16;
 		nbr = nbr / 16;
-		str[i] = base[resultat];
-		i++;
+		str[--i] = base[resultat];
 	}
-	str[i] = 0;
-	ft_rev_char_tab_x(str, i, verification);
+	i = ft_printf_s(str, verification);
 	free(str);
 	return (i);
 }
 
 int	ft_printf_nb_big_x(unsigned int nbr, int *verification)
 {
-	unsigned int		resultat;
+	int					resultat;
 	char				*str;
 	int					i;
 	char				*base;
 
 	base = "0123456789ABCDEF";
-	i = 0;
+	i = ft_count_return_nb_x(nbr);
+	resultat = 0;
 	str = NULL;
-	str = (char *) malloc(sizeof(char) * 15);
+	str = (char *) malloc(sizeof(char) * (i + 1));
 	if (!str)
-		return (-1);
-	while (nbr > 0)
+		return (verification_null(verification));
+	str[i] = 0;
+	while (i > 0)
 	{
-		resultat = 0;
 		resultat = nbr % 16;
 		nbr = nbr / 16;
-		str[i] = base[resultat];
-		i++;
+		str[--i] = base[resultat];
 	}
-	str[i] = 0;
-	ft_rev_char_tab_x(str, i, verification);
+	i = ft_printf_s(str, verification);
 	free(str);
 	return (i);
 }

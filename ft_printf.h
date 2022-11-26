@@ -16,18 +16,20 @@
 # include <stdlib.h> 
 # include <stdarg.h>
 # include <stdio.h>
-void	ft_rev_char_tab_x(char *tab, int size, int *verification);
-void	ft_rev_char_tab(char *tab, int size, int *verification);
-int		ft_count_return_nb(int n);
-int		ft_count_return_nb_u(unsigned int n);
-int		ft_count_return_nb_long(unsigned long long n);
-int		ft_printf_nb_x(unsigned int nbr, int *verification);
-int		ft_printf_nb(int n, int *verification);
-int		ft_printf_nb_u(unsigned int n, int *verification);
-int		ft_print_value(va_list parametres, char str, int *verification);
-int		ft_printf(const char *str, ...);
-int		ft_printf_c(char c, int *verification);
-int		ft_printf_s(char *s, int *verification);
-int		ft_printf_void(unsigned long long nb, int *verification);
-int		ft_printf_nb_big_x(unsigned int nbr, int *verification);
+
+int	ft_count_return_nb(int n);
+int	ft_count_return_nb_u(unsigned int n);
+int	ft_count_return_nb_long(unsigned long long n);
+int	ft_printf_nb_x(unsigned int nbr, int *verification);
+int	ft_printf_nb_big_x(unsigned int nbr, int *verification);
+int	ft_printf_nb(int n, int *verification);
+int	ft_printf_nb_u(unsigned int n, int *verification);
+int	ft_print_value(va_list args, char str, int *verification);
+int	ft_printf(const char *str, ...);
+int	ft_printf_c(char c, int *verification);
+int	ft_printf_s(char *s, int *verification);
+int	ft_printf_void(unsigned long long nb, int *verification);
+int	ft_count_return_nb_x(unsigned int n);
+int	verification_null(int *verification);
+int	verification_end(int *verification, int value);
 #endif
