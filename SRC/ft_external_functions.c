@@ -6,13 +6,13 @@
 /*   By: haze <haze@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:46:35 by mthea             #+#    #+#             */
-/*   Updated: 2022/11/25 15:23:24 by haze             ###   ########.fr       */
+/*   Updated: 2022/11/26 09:46:11 by haze             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../INCLUDES/ft_printf.h"
 
-void	ft_rev_char_tab_x_X(char *tab, int size, int *verification)
+void	ft_rev_char_tab_x(char *tab, int size, int *verification)
 {
 	int		i;
 	char	stockage;
@@ -61,6 +61,7 @@ void	ft_rev_char_tab(char *tab, int size, int *verification)
 		i++;
 	}
 }
+
 int	ft_count_return_nb(int n)
 {
 	int	i;
@@ -101,4 +102,3 @@ int	ft_count_return_nb_long(unsigned long long n)
 	}
 	return (i);
 }
-

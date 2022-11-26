@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_string_letters.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mthea <mthea@student.42.fr>                +#+  +:+       +#+        */
+/*   By: haze <haze@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 11:49:28 by mthea             #+#    #+#             */
-/*   Updated: 2022/11/24 15:43:08 by mthea            ###   ########.fr       */
+/*   Updated: 2022/11/26 09:42:52 by haze             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../INCLUDES/ft_printf.h"
 
-// Functions for %c
 int	ft_printf_c(char c, int *verification)
 {
 	int	number;
@@ -24,7 +23,6 @@ int	ft_printf_c(char c, int *verification)
 		*verification = -1;
 	return (number);
 }
-// fonctions for %s
 
 int	ft_printf_s(char *s, int *verification)
 {

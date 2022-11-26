@@ -6,7 +6,7 @@
 /*   By: haze <haze@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 13:02:06 by mthea             #+#    #+#             */
-/*   Updated: 2022/11/26 09:40:43 by haze             ###   ########.fr       */
+/*   Updated: 2022/11/26 09:45:51 by haze             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	ft_printf(const char *str, ...)
 			value += ft_print_value(parametres,str[i], &verification);
 		}
 		else
-			value  += ft_printf_c(str[i], &verification);
+			value += ft_printf_c(str[i], &verification);
 	}
 	va_end(parametres);
 	if (verification == -1)
