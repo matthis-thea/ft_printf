@@ -6,18 +6,20 @@
 /*   By: haze <haze@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 13:29:37 by mthea             #+#    #+#             */
-/*   Updated: 2022/11/26 09:44:50 by haze             ###   ########.fr       */
+/*   Updated: 2022/11/26 11:49:20 by haze             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../INCLUDES/ft_printf.h"
+#include "ft_printf.h"
 
-int	ft_printf_void(unsigned long long nb, char *base, int *verification)
+int	ft_printf_void(unsigned long long nb, int *verification)
 {
 	unsigned int		resultat;
 	char				*str;
 	int					i;
+	char				*base;
 
+	base = "0123456789abcdef";
 	i = 2;
 	str = NULL;
 	str = (char *) malloc(sizeof(char) * 15);

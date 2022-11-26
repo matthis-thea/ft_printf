@@ -6,11 +6,11 @@
 /*   By: haze <haze@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:46:35 by mthea             #+#    #+#             */
-/*   Updated: 2022/11/26 09:46:11 by haze             ###   ########.fr       */
+/*   Updated: 2022/11/26 11:36:10 by haze             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../INCLUDES/ft_printf.h"
+#include "ft_printf.h"
 
 void	ft_rev_char_tab_x(char *tab, int size, int *verification)
 {

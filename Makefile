@@ -1,11 +1,13 @@
 #VARIABLES
 NAME = libftprintf.a
 
-CFLAGS = -Wall -Wextra -Werror -g
+SRC = ft_printf.c ft_void_percent.c ft_string_letters.c ft_numbers_base_ten.c ft_numbers_base_sixteen.c ft_external_functions.c
 
-SRC = SRC/ft_printf.c SRC/ft_void_percent.c SRC/ft_string_letters.c SRC/ft_numbers_base_ten.c SRC/ft_numbers_base_sixteen.c SRC/ft_external_functions.c
+OBJ = $(SRC:.c=.o) 
 
-INC = INCLUDES/ft_printf.h
+CC = gcc
+
+CFLAGS = -Wall -Wextra -Werror 
 
 RM = rm -rf
 
@@ -16,7 +18,7 @@ OBJ = $(SRC:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	 ar -crs $(NAME) $(OBJ) $(INC)
+	 ar -crs $(NAME) $(OBJ)
 	
 clean :
 	$(RM) $(OBJ)

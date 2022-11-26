@@ -6,35 +6,35 @@
 /*   By: haze <haze@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 13:02:06 by mthea             #+#    #+#             */
-/*   Updated: 2022/11/26 09:45:51 by haze             ###   ########.fr       */
+/*   Updated: 2022/11/26 11:44:49 by haze             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../INCLUDES/ft_printf.h"
+#include "ft_printf.h"
 
-int	ft_print_value(va_list parametres, char str, int *verification)
+int	ft_print_value(va_list args, char str, int *verification)
 {
 	int	value;
 
 	if (str == 'c')
-		value = ft_printf_c(va_arg(parametres, int), verification);
+		value = ft_printf_c(va_arg(args, int), verification);
 	else if (str == 's')
-		value = ft_printf_s(va_arg(parametres, char *), verification);
+		value = ft_printf_s(va_arg(args, char *), verification);
 	else if (str == 'p')
-		value = ft_printf_void(va_arg(parametres, unsigned long long), "0123456789abcdef",verification);
-	else if ((str == 'd') || (str = 'i'))
-		value = ft_printf_nb(va_arg(parametres, int), verification);
+		value = ft_printf_void(va_arg(args, unsigned long long), verification);
+	else if ((str == 'd') || (str == 'i'))
+		value = ft_printf_nb(va_arg(args, int), verification);
 	else if (str == 'u')
-		value = ft_printf_nb_u(va_arg(parametres, unsigned int), verification);
+		value = ft_printf_nb_u(va_arg(args, unsigned int), verification);
 	else if (str == 'x')
-		value = ft_printf_nb_x(va_arg(parametres, unsigned int), "0123456789abcdef", verification);
+		value = ft_printf_nb_x(va_arg(args, unsigned int), verification);
 	else if (str == 'X')
-		value = ft_printf_nb_x(va_arg(parametres, unsigned int), "0123456789ABCDEF", verification);
+		value = ft_printf_nb_big_x(va_arg(args, unsigned int), verification);
 	else if (str == '%')
 		value = ft_printf_c('%', verification);
 	else
 	{
-		*verification = - 1;
+		*verification = -1;
 	}
 	if (value < 0)
 		*verification = -1;
@@ -43,7 +43,7 @@ int	ft_print_value(va_list parametres, char str, int *verification)
 
 int	ft_printf(const char *str, ...)
 {
-	va_list parametres;
+	va_list	parametres;
 	int		i;
 	int		value;
 	int		verification;
@@ -51,12 +51,14 @@ int	ft_printf(const char *str, ...)
 	i = 0;
 	value = 0;
 	va_start(parametres, str);
+	if (!str)
+		return (0);
 	while (str[i])
 	{
 		if (str[i] == '%')
 		{
 			i++;
-			value += ft_print_value(parametres,str[i], &verification);
+			value += ft_print_value(parametres, str[i], &verification);
 		}
 		else
 			value += ft_printf_c(str[i], &verification);

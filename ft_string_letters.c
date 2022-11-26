@@ -6,11 +6,11 @@
 /*   By: haze <haze@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 11:49:28 by mthea             #+#    #+#             */
-/*   Updated: 2022/11/26 09:42:52 by haze             ###   ########.fr       */
+/*   Updated: 2022/11/26 11:36:28 by haze             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../INCLUDES/ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_printf_c(char c, int *verification)
 {
